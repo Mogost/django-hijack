@@ -1,48 +1,24 @@
 language: python
-
-# Enumerate all Python/Django pairs until Travis has a real syntax for that
-# Use tox -l to list available tox environments
-matrix:
-  include:
-  - python: 2.7
-    env: TOXENV=py27-django18
-  - python: 2.7
-    env: TOXENV=py27-django19
-  - python: 2.7
-    env: TOXENV=py27-django110
-  - python: 2.7
-    env: TOXENV=py27-django111
-
-  - python: 3.5
-    env: TOXENV=py35-django18
-  - python: 3.5
-    env: TOXENV=py35-django19
-  - python: 3.5
-    env: TOXENV=py35-django110
-  - python: 3.5
-    env: TOXENV=py35-django111
-  - python: 3.5
-    env: TOXENV=py35-django20
-
-  - python: 3.6
-    env: TOXENV=py36-django18
-  - python: 3.6
-    env: TOXENV=py36-django19
-  - python: 3.6
-    env: TOXENV=py36-django110
-  - python: 3.6
-    env: TOXENV=py36-django111
-  - python: 3.6
-    env: TOXENV=py36-django20
-
+python:
+- '3.5'
+- '3.6'
+- '3.7'
+- '3.8'
 install:
-    - pip install tox-travis
-    - pip install coveralls
-
+- pip install coveralls tox-travis
 script:
-    - tox
-
+- tox
 sudo: false
 
-after_success:
-    coveralls
+after_success: coveralls
+
+deploy:
+  provider: pypi
+  server: https://test.pypi.org/legacy/
+  user: __token__
+  password:
+    secure: jczl9PDuSGVHvqClW5glEuYWyLjEVyu+mE6F2UTe7lho3HU+RbgPwzSfDXVQLwbI2ls/EACawQnZtCgkmT6hmHI1X/j7YvkEBaNTWzkFKnCCcvq+RvCZkzQovwNGPGp6Nkg0B3pI2oTMbhTmoo0YoPnJ9T3iNifRQsZjjMT0/bYYTinqcARKU9sluxp4EosCVlmq/VbapRLsHimPk0rPtrZEFrh/MKOYFJYXxyijNBV4vBqcU5lAqN+wjVRnhGushTLQchsbRc22KWDN+rdYmxYR0xCSVJM8tQqiaW4VD0j+A6tiO1vCl5Pk+X7Ak9Ce/xA6LPjzRaP4Udi75o6TsrrIB1coEHKJes8JQO8kUUlrr60iSodtLZaKeAAjWU+CcoUj0ImTrkekPFTLVngf5Q0jlU3FiOjz9iEOneZXdOoescWZmHObZ7FXxL4j1qCzuFwmiUvpB+17igCWHGkkKt7ZaSGxDliq1xXND1SJCoCBawLg02zLp+KnUpVMbYyO9YSNfMRsAHS4vNrRtwrZsBfstjwI94gD6izn1wcBFC6GA7Ii4/kus9SXQx2LzOQ9P/JukJHhvh9Up7s1Fbt3PbykaF7UKjtqAvNXGLQgXOaPi43UDk/Tk/8cB+CSVB8GUbiCC3z4Wr5MHapYtOCuGgoCQdV/t+/+SIm9utT81z8=
+  on:
+    tags: true
+    repo: Mogost/django-hijack
+    python: 3.6
