@@ -6,8 +6,8 @@ python:
 - '3.8'
 install:
 - pip install coveralls tox-travis
-script:
-- tox
+# script:
+# - tox
 sudo: false
 after_success: coveralls
 deploy:
