@@ -4,7 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/arteria/django-hijack/badge.svg?branch=master&service=github)](https://coveralls.io/github/arteria/django-hijack?branch=master)
 [![PyPI](https://img.shields.io/pypi/v/django-hijack.svg)](https://pypi.python.org/pypi/django-hijack)
 
-![Screenshot of the notification seen while hijacking another user.](docs/hijacker-screenshot.png)
+![Screenshot of the notification seen while hijacking another user.](https://github.com/arteria/django-hijack/raw/master/docs/hijacker-screenshot.png)
 
 With Django Hijack, admins can log in and work on behalf of other users without having to know their credentials.
 
