@@ -33,7 +33,6 @@ setup(
         "Source": "https://github.com/arteria/django-hijack",
         "Tracker": "https://github.com/arteria/django-hijack/issues",
     },
-    project_urls=
     packages=find_packages(),
     include_package_data=True,
     classifiers=[
