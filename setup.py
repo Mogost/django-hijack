@@ -27,6 +27,13 @@ setup(
     author="arteria GmbH",
     author_email="admin@arteria.ch",
     url="https://github.com/arteria/django-hijack",
+    project_urls={
+        "Documentation": "https://django-hijack.readthedocs.io/",
+        "Funding": "https://github.com/arteria/django-hijack#funding",
+        "Source": "https://github.com/arteria/django-hijack",
+        "Tracker": "https://github.com/arteria/django-hijack/issues",
+    },
+    project_urls=
     packages=find_packages(),
     include_package_data=True,
     classifiers=[
