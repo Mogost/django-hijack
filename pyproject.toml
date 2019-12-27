@@ -7,8 +7,7 @@ known_first_party = "hijack"
 multi_line_output = 3
 include_trailing_comma = true
 force_grid_wrap = 0
-# TODO: 88 for black
-line_length = 80
+line_length = 88
 use_parentheses = true
 default_section = "THIRDPARTY"
 skip = "migrations"
